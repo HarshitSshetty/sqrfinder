@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Square Finder App by Harshit</title>
+    <link rel="stylesheet" href="mystyle.css" />
+</head>
+<body>
+
+<center>
+    <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+    </div>
+
+    <h1>Square Finder App</h1>
+
+    <form onsubmit="compute(event)">
+        <input type="number" id="num" step="any" placeholder="Enter number" required />
+        <br/><br/>
+        <input type="submit" value="Find Square" />
+    </form>
+
+    <h2 id="msg"></h2>
+</center>
+
+<script>
+    function compute(event) {
+        event.preventDefault();  // Prevent form submission
+        let num = document.getElementById("num").value;
+        let msg = document.getElementById("msg");
+
+        if (num === "") {
+            alert("Please enter a number");
+            msg.innerHTML = "";
+            return;
+        }
+
+        let n = parseFloat(num);
+        let r = n ** 2;
+        localStorage.setItem("res", r.toFixed(2));
+        window.location.href = "result.html";
+    }
+</script>
+
+</body>
+</html>

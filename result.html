@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" href="mystyle.css" />
+</head>
+<body>
+
+<center>
+    <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+    </div>
+
+    <h3>Result Page</h3>
+
+    <h2 id="msg"></h2>
+</center>
+
+<script>
+    let msg = document.getElementById("msg");
+    let res = localStorage.getItem("res");
+
+    if (res !== null) {
+        msg.innerHTML = "Square = " + res;
+    } else {
+        msg.innerHTML = "No result found.";
+    }
+</script>
+
+</body>
+</html>
